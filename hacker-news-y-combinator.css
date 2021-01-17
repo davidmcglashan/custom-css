@@ -13,8 +13,10 @@ a:hover, a:focus {
 	text-decoration: underline;
 }
 
+/* Make the main table position:relative so we can absolutely position its children. */
 body>center>table {
 	background: white !important;
+	position: relative;
 }
 
 /* ==========================================================
@@ -48,6 +50,18 @@ span.pagetop {
 	color: transparent !important;
 }
 
+/* Bring the login link over from the right hand side to the end of the masthead options. */
+table#hnmain>tbody>tr:first-child td table {
+	width: auto;
+}
+#hnmain > tbody > tr:nth-child(1) > td > table > tbody > tr > td:nth-child(3) {
+	padding-left: 0;
+	padding-top: 1.05em;
+}
+#hnmain > tbody > tr:nth-child(1) > td > table > tbody > tr > td:nth-child(3) span a {
+	font-weight: 500;
+}
+
 /* ==========================================================
  *  News items styles
  */
@@ -67,8 +81,8 @@ table.itemlist tr * {
 }
 
 /* Hide the redundant nodes being used for spacing purposes. */
-#pagespace, tr.spacer {
-	display: none;
+#pagespace, tr.spacer, tr.morespace {
+	display: none !important;
 }
 
 /* All the hyperlinks in the itemlist should be blue on hover. */
@@ -147,4 +161,74 @@ td.subtext {
 	position: absolute;
 	top: -2em;
 	left: 5em;
+}
+
+/* ==========================================================
+ *  More link
+ */
+
+/* The "More" link for the next page is actually in the itemlist table. Make sure there's space for it at the bottom with a big height. Border for cosmetics. */
+table.itemlist tbody tr:last-child {
+	border: 1px solid #ddd;
+	border-width: 1px 0;
+	height: 3.75em;
+}
+
+/* Make the cell span the width and centre its text. */
+table.itemlist tbody tr:last-child td.title {
+	left: 0;
+	top: 1.2em;
+	text-align: center;
+	width: 100%;
+}
+
+/* Make the "More" link blue. */
+a.morelink {
+	color: #36f !important;
+}
+
+/* ==========================================================
+ *  Page footer styles
+ */
+ 
+ /* There's a lot of junk at the page footer and no easy way to identify it. It's all the last row of the principal table on the page and we can hide much of it. */
+#hnmain > tbody > tr:last-child > td > * {
+	display: none;
+}
+
+/* Restore the <center> containing the .yclinks span. That's what we're interested in. Move it down away from the itemlist table as well. */
+#hnmain > tbody > tr:last-child > td > center {
+	display: block;
+	padding-top: 3em;
+}
+
+/* Use the transparent text trick to hide the | between the links in the footer. */
+span.yclinks {
+	color: transparent !important;
+}
+
+/* Make the footer links blue and space them out a little bit better. */
+span.yclinks a {
+	padding: 0.75em;
+	color: #36f !important;
+}
+
+/* ==========================================================
+ *  Search box styles
+ */
+ 
+/* Hack the search box from the very bottom to the very top of the page and hide its text. */
+#hnmain > tbody > tr:last-child > td > center > form {
+	position: absolute;
+	top: 0.8em;
+	right: 1em;
+	color: transparent !important;
+}
+
+/* Make it look like a sleek modern rounded search box. */
+#hnmain > tbody > tr:last-child > td > center > form > input {
+	border-radius: 96px;
+	border: 0;
+	padding: 0.25em 1em;
+	tabIndex: 0;
 }
