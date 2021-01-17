@@ -9,14 +9,21 @@
 	font-size: 11pt !important;
 }
 
+/* All hyperlinks get underlines on hover. */
 a:hover, a:focus {
 	text-decoration: underline;
 }
 
-/* Make the main table position:relative so we can absolutely position its children. */
+/* Make the main table span the full page width and position:relative so we can absolutely position its children. */
 body>center>table {
 	background: white !important;
 	position: relative;
+	width: 100%;
+}
+
+/* Remove the page margin. Now the content fully fills the frame. */
+body {
+	margin: 0;
 }
 
 /* ==========================================================
@@ -108,6 +115,10 @@ table.itemlist tr.athing {
 	position: relative;
 }
 
+/* ==========================================================
+ *  Row numbers
+ */
+
 /* First child is the item number, 1. 2. etc. */
 table.itemlist tr.athing td:first-child {
 	position: absolute;
@@ -122,6 +133,10 @@ span.rank {
 	color: #aaa !important;
 }
 
+/* ==========================================================
+ *  Voting arrows
+ */
+
 /* The above rules hide the voting arrows. This restores them. */
 td.votelinks {
 	position: absolute;
@@ -131,6 +146,10 @@ td.votelinks {
 div.votearrow {
 	display: block !important;
 }
+
+/* ==========================================================
+ *  Story titles
+ */
 
 /* Absolutely position the title of each item. */
 td.title {
@@ -156,11 +175,29 @@ span.sitebit a span.sitestr {
 	color: #777 !important;
 }
 
-/* The .subtext cells contain the points, submitter, comments link, etc. Move them up so they appear in the fat stripes attributed to .athing rows. */
+/* ==========================================================
+ *  Points, submitter, comments, etc.
+ */
+
+/* Move these up so they appear in the fat stripes provided by the .athing rows. */
 td.subtext {
 	position: absolute;
 	top: -2em;
 	left: 5em;
+	color: #999 !important;
+}
+
+/* Colour tweaks to the text so users and comments links stand out (but not too much) */
+td.subtext a, td.subtext span.age a {
+	color: #999 !important;
+}
+td.subtext a.hnuser, td.subtext a:last-child {
+	color: #444 !important;
+}
+
+/* And then CSS behooves us to restore the blue link to the colour. !importants upon !importants at this point. Ugh. */
+td.subtext a:hover, td.subtext a:focus, td.subtext span.age a:hover, td.subtext span.age a:focus {
+	color: #36f !important;
 }
 
 /* ==========================================================
@@ -231,4 +268,102 @@ span.yclinks a {
 	border: 0;
 	padding: 0.25em 1em;
 	tabIndex: 0;
+}
+
+/* ==========================================================
+ *  Comment page styles
+ */
+ 
+/* The front page styles above actually do considerable "damage" to this page so this first block of styles is to rectify that using the additional DOM elements that appear on comments. */
+#hnmain .fatitem {
+	position: relative;
+	width: 100%;
+}
+#hnmain .fatitem .title {
+	left: 2em;
+}
+
+/* All votelinks float at the top of the page. This restores the story vote button to next to the headline. */
+#hnmain .fatitem td.votelinks {
+	position: absolute;
+}
+
+/* Make the page headline BIG */
+#hnmain .fatitem .storylink {
+	font-size: 20pt !important;
+}
+#hnmain .fatitem a:hover,#hnmain .fatitem a:focus,#hnmain .fatitem a:hover span,#hnmain .fatitem a:focus span {
+	color: #36f !important
+}
+
+/* Restore the subtext to underneath the headline. */
+#hnmain .fatitem .subtext {
+	position: initial;
+	padding: 3em 0.5em 0 1.6em;
+}
+
+/* Re-position the comments textarea and make it wider */
+#hnmain .fatitem form * {
+	margin: 0 0 0 1.5em;
+}
+#hnmain .fatitem form textarea {
+	width: 60%;
+}
+
+/* Make the "Add Comment" button a but more attractive */
+#hnmain .fatitem form input[type=submit] {
+	border: 3em;
+	border-radius: 6px;
+	text-transform: capitalize;
+	padding: 0.5em 1em;
+}
+
+/* ==========================================================
+ *  Styles for the comments themselves.
+ */
+
+/* Relatively position everything so that we can absolutely position other things! */
+table.comment-tree * {
+	position: relative;
+}
+
+/* Tweak the votelink icons back to the right place. */
+table.comment-tree td.votelinks {
+	left: 0em;
+	top: 0.25em;
+}
+
+/* Unimposing underline on author and date. */
+table.comment-tree span.comhead {
+	border-bottom: 1px solid #ccc;
+}
+
+/* Display the comment author users in dark and bold. */
+table.comment-tree a.hnuser {
+	color: #444 !important;
+	font-weight: 400;
+	padding-right: 0.5em;
+}
+
+/* Make the comment datestamp a bit paler and restore its hyperlink blue. */
+table.comment-tree span.age a {
+	color: #999 !important;
+	padding-right: 0.5em;
+}
+
+/* italic text in comments is probably quotes so de-emphasise them a bit. */
+table.comment-tree i {
+	color: #999 !important;
+}
+
+/* Restore proper hyperlink blues and hover/focus states. */
+span.commtext a, div.reply a, u {
+	color: #36f !important;
+	text-decoration: none !important;
+}
+span.commtext a:hover, span.commtext a:focus, div.reply a:hover, div.reply a:focus {
+	text-decoration: underline !important;
+}
+table.comment-tree a:hover, table.comment-tree a:focus, table.comment-tree span.age a:hover, table.comment-tree span.age a:focus {
+	color: #36f !important;
 }
