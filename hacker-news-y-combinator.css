@@ -1,0 +1,148 @@
+/* ==========================================================
+ *  Apply these styles everywhere. Mostly fonts and colours.
+ */
+
+*, body {
+	font-family: "Helvetica Neue" !important;
+	font-weight: 300;
+	color: #222 !important;
+	font-size: 11pt !important;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
+
+body>center>table {
+	background: white !important;
+}
+
+/* ==========================================================
+ *  Orange masthead styles
+ */
+
+/* Applies a nice thick padding to the orange masthead table cells. */
+table#hnmain>tbody>tr:first-child td table tr td {
+	padding: 1em;
+}
+
+/* make "Hacker News" bigger and bolder and spaced out */
+b.hnname a {
+	font-size: 14pt !important;
+	font-weight: 600;
+	padding-right: 2em;
+}
+
+/* Hyperlinks in the masthead are white on hover/focus */
+span.pagetop a:hover, span.pagetop a:focus {
+	color: white !important;
+}
+
+/* Space out the masthead options. */
+span.pagetop a {
+	padding-right: 1em;
+}
+
+/* Making the text colour transparent hides the "|" which appear between the links in the masthead. <a> tags bring their own colours. */
+span.pagetop {
+	color: transparent !important;
+}
+
+/* ==========================================================
+ *  News items styles
+ */
+
+/* Forces the item list table to span the width of its container so the stripes go all the way across the page. */
+table.itemlist {
+	width: 100%;
+}
+
+/* Force every table element apart from rows to display inline. This destroys the table structure, turning the output into basic text, but keeps the separation between rows. */
+table.itemlist tr {
+	display: block;
+	position: relative;
+}
+table.itemlist tr * {
+	display: inline;
+}
+
+/* Hide the redundant nodes being used for spacing purposes. */
+#pagespace, tr.spacer {
+	display: none;
+}
+
+/* All the hyperlinks in the itemlist should be blue on hover. */
+table.itemlist a:hover, table.itemlist a:focus {
+	color: #36f !important;
+}
+table.itemlist a:hover span.sitestr, table.itemlist a:focus span.sitestr {
+	color: #36f !important;
+	font-weight: 300;
+}
+
+/* The .athing rows contain the story details. Make them tall and padded so they look nice. And add stripes. */
+table.itemlist tr.athing {
+	height: 3em;
+	padding: 0.5em;
+}
+table.itemlist tr.athing:nth-child(even) {
+	background: #f8f8f8;
+}
+
+/* The .athings need position relative so we can absolutely position their children ... */
+table.itemlist tr.athing {
+	position: relative;
+}
+
+/* First child is the item number, 1. 2. etc. */
+table.itemlist tr.athing td:first-child {
+	position: absolute;
+	left: 0em;
+	top: 0.6em;
+	width: 3.4em;
+	text-align: right;
+}
+span.rank {
+	font-weight: 200;
+}
+
+/* The above rules hide the voting arrows. This restores them. */
+td.votelinks {
+	position: absolute;
+	left: 0.5em;
+	top: 0.6em;
+}
+div.votearrow {
+	display: block !important;
+}
+
+/* Absolutely position the title of each item. */
+td.title {
+	position: absolute;
+	left: 3.85em;
+	top: 0.6em;
+}
+
+/* Make the links to stories a bit bolder - but not too much - so they stand out. */
+a.storylink {
+	font-weight: 400;
+}
+
+/* Hide the parens around hostnames for the story links. This reduces the visual clutter a bit. */
+span.sitebit {
+	color: transparent !important;
+}
+
+/* Site names are also paler, lighter and slightly further away from link titles. */
+span.sitebit a span.sitestr {
+	padding-left: 0.5em;
+	font-weight: 200;
+	color: #777 !important;
+}
+
+/* The .subtext cells contain the points, submitter, comments link, etc. Move them up so they appear in the fat stripes attributed to .athing rows. */
+td.subtext {
+	position: absolute;
+	top: -2em;
+	left: 2.5em;
+}
