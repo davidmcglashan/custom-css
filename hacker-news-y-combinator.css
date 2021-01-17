@@ -351,6 +351,10 @@ table.comment-tree span.age a {
 	padding-right: 0.5em;
 }
 
+div.comment {
+	line-height: 18pt;
+}
+
 /* italic text in comments is probably quotes so de-emphasise them a bit. */
 table.comment-tree i {
 	color: #999 !important;
