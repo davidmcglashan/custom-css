@@ -84,7 +84,7 @@ table.itemlist tr {
 	position: relative;
 }
 table.itemlist tr * {
-	display: inline-block;
+	display: inline;
 }
 
 /* Hide the redundant nodes being used for spacing purposes. */
@@ -156,6 +156,7 @@ td.title {
 	position: absolute;
 	left: 5em;
 	top: 0.6em;
+	right: 0;
 }
 
 /* Make the links to stories a bit bolder - but not too much - so they stand out. */
