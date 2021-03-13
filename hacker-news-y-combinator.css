@@ -122,9 +122,9 @@ table.itemlist tr.athing {
 /* First child is the item number, 1. 2. etc. */
 table.itemlist tr.athing td:first-child {
 	position: absolute;
-	left: 1.5em;
+	left: 2em;
 	top: 0.6em;
-	width: 3.6em;
+	width: 4em;
 	text-align: center;
 }
 span.rank {
@@ -154,7 +154,7 @@ div.votearrow {
 /* Absolutely position the title of each item. */
 td.title {
 	position: absolute;
-	left: 5em;
+	left: 6.5em;
 	top: 0.6em;
 	right: 0;
 }
@@ -184,7 +184,7 @@ span.sitebit a span.sitestr {
 td.subtext {
 	position: absolute;
 	top: -2em;
-	left: 5em;
+	left: 6.5em;
 	color: #999 !important;
 }
 
