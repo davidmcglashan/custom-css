@@ -1,0 +1,114 @@
+/* ==========================================================
+ *  General page styles
+ */
+
+/* Remove the body margin so the content touches the viewport edges.  */
+body {
+	margin: 0;
+}
+
+/* Unsetting these widths makes the content span the full page width. */
+div#wrapper {
+	min-width: unset;
+	max-width: unset;
+}
+
+/* Call me old fashioned, but I like my hyperlinks underlined, at least on hover/focus. */
+a:focus,a:hover,
+li .link a:focus, li .link a:hover,
+li .byline a:focus, li .byline a:hover {
+	text-decoration: underline;
+}
+
+/* ==========================================================
+ *  Header
+ */
+
+/* Push the header to the top of the viewport, change its colours and give it nice padding. Make the fonts a bit bigger. */
+div#header {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 1em;
+	background-color: #36a;
+	font-size: 1.4em;
+}
+
+/* Make the header stick to the top of the viewport. */
+div#header {
+	left: 0;
+	right: 0;
+	top: 0;
+	position: fixed;
+	z-index: 1;
+}
+div#inside {
+	margin-top: 4em;
+}
+
+/* Make the logo background color black. This needs important since it's declared in the element's style attr. :| */
+#l_holder {
+	background-color: #000;
+}
+
+/* Make the "Lobsters" text in the header a pleasing sky blue. */
+div#header a.cur_url {
+	color: #d0eaff;
+}
+
+/* All other header hyperlinks are white. */
+div#header a {
+	color: white;
+}
+
+/* ==========================================================
+ *  Item list
+ */
+
+/* Alternating stripes. */
+ol.stories li:nth-child(even) {
+	background: #f8f8f8;
+}
+
+/* Make each row in the item list a bit roomier. */
+ol.stories li {
+	padding: 0.5em;
+}
+
+/* Remove these margins which keep content away from the viewport edges. */
+li div.details, div.story_content {
+	margin: 0;
+}
+
+/* Increase font size and remove the boldness of the story headlines. */
+li .link a {
+	font-size: 1.4em;
+	font-weight: 400;
+}
+
+/* Make the comments hyperlinks a bit more stand-out-y. */
+span.comments_label a {
+	color: #2562dc;
+}
+
+/* Make the tags orange and with a larger font size. */
+a.tag {
+	background-color: #fb8;
+	border: none;
+	border-radius: 1px;
+	color: #000;
+	font-size: 11pt;
+	padding: 0.2em 0.6em;
+}
+
+/* Move the tags to the right hand side of each row. */
+a.tag {
+	float: right;
+}
+
+/* Make the article URL domain a bit larger and a bit away from the article headline. */
+li .domain {
+	color: #888;
+	font-style: normal;
+	font-size: 11pt;
+	margin-left: 0.5em;
+}
