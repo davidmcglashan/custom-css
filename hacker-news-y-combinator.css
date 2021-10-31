@@ -160,7 +160,7 @@ td.title {
 }
 
 /* Make the links to stories a bit bolder - but not too much - so they stand out. */
-a.storylink {
+a.titlelink {
 	font-weight: 400;
 }
 
