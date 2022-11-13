@@ -3,7 +3,7 @@
  */
 
 *, body {
-	font-family: "Helvetica Neue", Helvetica, Arial, "Sans Serif" !important;
+	font-family: "Helvetica Neue" !important;
 	font-weight: 300;
 	color: #222 !important;
 	font-size: 11pt !important;
@@ -74,16 +74,16 @@ table#hnmain>tbody>tr:first-child td table {
  */
 
 /* Forces the item list table to span the width of its container so the stripes go all the way across the page. */
-table.itemlist {
+#hnmain > tbody > tr > td > table {
 	width: 100%;
 }
 
 /* Force every table element apart from rows to display inline. This destroys the table structure, turning the output into basic text, but keeps the separation between rows. */
-table.itemlist tr {
+#hnmain > tbody > tr > td > table tr {
 	display: block;
 	position: relative;
 }
-table.itemlist tr * {
+#hnmain > tbody > tr > td > table tr * {
 	display: inline;
 }
 
@@ -93,25 +93,25 @@ table.itemlist tr * {
 }
 
 /* All the hyperlinks in the itemlist should be blue on hover. */
-table.itemlist a:hover, table.itemlist a:focus {
+#hnmain > tbody > tr > td > table a:hover, #hnmain > tbody > tr > td > table a:focus {
 	color: #36f !important;
 }
-table.itemlist a:hover span.sitestr, table.itemlist a:focus span.sitestr {
+#hnmain > tbody > tr > td > table a:hover span.sitestr, #hnmain > tbody > tr > td > table a:focus span.sitestr {
 	color: #36f !important;
 	font-weight: 300;
 }
 
 /* The .athing rows contain the story details. Make them tall and padded so they look nice. And add stripes. */
-table.itemlist tr.athing {
+#hnmain > tbody > tr > td > table tr.athing {
 	height: 3em;
 	padding: 0.5em;
 }
-table.itemlist tr.athing:nth-child(even) {
+#hnmain > tbody > tr > td > table tr.athing:nth-child(even) {
 	background: #f8f8f8;
 }
 
 /* The .athings need position relative so we can absolutely position their children ... */
-table.itemlist tr.athing {
+#hnmain > tbody > tr > td > table tr.athing {
 	position: relative;
 }
 
@@ -120,7 +120,7 @@ table.itemlist tr.athing {
  */
 
 /* First child is the item number, 1. 2. etc. */
-table.itemlist tr.athing td:first-child {
+#hnmain > tbody > tr > td > table tr.athing td:first-child {
 	position: absolute;
 	left: 2em;
 	top: 0.6em;
@@ -205,15 +205,13 @@ td.subtext a:hover, td.subtext a:focus, td.subtext span.age a:hover, td.subtext 
  *  More link
  */
 
-/* The "More" link for the next page is actually in the itemlist table. Make sure there's space for it at the bottom with a big height. Border for cosmetics. */
-table.itemlist tbody tr:last-child {
-	border: 1px solid #ddd;
-	border-width: 1px 0;
+/* The "More" link for the next page is actually in the itemlist table. Make sure there's space for it at the bottom with a big height. */
+#hnmain > tbody > tr > td > table tbody tr:last-child {
 	height: 3.75em;
 }
 
 /* Make the cell span the width and centre its text. */
-table.itemlist tbody tr:last-child td.title {
+#hnmain > tbody > tr > td > table tbody tr:last-child td.title {
 	left: 0;
 	top: 1.2em;
 	text-align: center;
