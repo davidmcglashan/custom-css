@@ -43,8 +43,7 @@ b.hnname a {
 }
 
 /* Hyperlinks in the masthead are white on hover/focus */
-table#hnmain>tbody>tr:first-child td table span.pagetop a:hover,
-table#hnmain>tbody>tr:first-child td table span.pagetop a:focus {
+span.pagetop a:hover, span.pagetop a:focus {
 	color: white !important;
 }
 
@@ -76,32 +75,14 @@ table#hnmain>tbody>tr:first-child td table {
  *  News items styles
  */
 
-/* Forces the item list table to span the width of its container so the stripes go all the way across the page. */
-#hnmain>tbody>tr>td>table {
-	width: 100%;
-}
-
-/* Force every table element apart from rows to display inline. This destroys the table structure, turning the output into basic text, but keeps the separation between rows. */
-#hnmain>tbody>tr>td>table tr {
-	display: block;
-	position: relative;
-}
-
-#hnmain>tbody>tr>td>table tr * {
-	display: inline;
-}
-
-/* Hide the redundant nodes being used for spacing purposes. */
-#pagespace, tr.spacer, tr.morespace {
-	display: none !important;
-}
-
 /* All the hyperlinks in the itemlist should be blue on hover. */
-#hnmain>tbody>tr>td>table a:hover,
-#hnmain>tbody>tr>td>table a:focus,
-#hnmain>tbody>tr>td>table a:hover span.sitestr,
-#hnmain>tbody>tr>td>table a:focus span.sitestr {
+#hnmain>tbody>tr>td>table a:hover, #hnmain>tbody>tr>td>table a:focus {
 	color: #36f !important;
+}
+
+#hnmain>tbody>tr>td>table a:hover span.sitestr, #hnmain>tbody>tr>td>table a:focus span.sitestr {
+	color: #36f !important;
+	font-weight: 300;
 }
 
 /* The .athing rows contain the story details. Make them tall and padded so they look nice. And add stripes. */
@@ -120,30 +101,6 @@ table#hnmain>tbody>tr:first-child td table {
 }
 
 /* ==========================================================
- *  Row numbers
- */
-
-/* First child is the item number, 1. 2. etc. */
-span.rank {
-	display: none !important;
-}
-
-/* ==========================================================
- *  Voting arrows
- */
-
-/* The above rules hide the voting arrows. This restores them. */
-td.votelinks {
-	position: absolute;
-	left: 1.5em;
-	top: 1.25em;
-}
-
-div.votearrow {
-	display: block !important;
-}
-
-/* ==========================================================
  *  Story titles
  */
 
@@ -153,6 +110,10 @@ td.title {
 	left: 3.5em;
 	top: 0.6em;
 	right: 0;
+}
+
+.title a {
+	font-size: 20pt !important;
 }
 
 /* Make the links to stories a bit bolder - but not too much - so they stand out. */
@@ -290,6 +251,11 @@ span.yclinks a {
 	font-size: 20pt !important;
 }
 
+/* When a page has text at the top (e.g. AskHN stuff) give it nice padding. */
+.toptext {
+	margin: 1em;
+}
+
 #hnmain .fatitem a:hover, #hnmain .fatitem a:focus, #hnmain .fatitem a:hover span, #hnmain .fatitem a:focus span {
 	color: #36f !important
 }
@@ -320,6 +286,9 @@ span.yclinks a {
 /* ==========================================================
  *  Styles for the comments themselves.
  */
+table.comment-tree {
+	width: 100%;
+}
 
 /* Relatively position everything so that we can absolutely position other things! */
 table.comment-tree * {
@@ -373,3 +342,8 @@ span.commtext a:hover, span.commtext a:focus, div.reply a:hover, div.reply a:foc
 table.comment-tree a:hover, table.comment-tree a:focus, table.comment-tree span.age a:hover, table.comment-tree span.age a:focus {
 	color: #36f !important;
 }
+
+div.votearrow {
+	margin: 17px 12px 6px
+}
+
