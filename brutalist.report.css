@@ -1,0 +1,38 @@
+/* Lose the grid. Bigger text. */
+div.brutal-grid {
+	font-size: 110%;
+    display: auto;
+    grid-auto-flow: none;
+    grid-template-columns: none;
+}
+
+/* Bigger site titles. Space them nicely. */
+div.brutal-grid div h3 {
+	margin-bottom: 0.25em;
+	margin-left: 1.5em;
+	font-size: 1.25em;
+}
+
+/* Thin rule at the top of each site's content. */
+div.brutal-grid div ul {
+	border-top: 1px solid #ccc;
+	margin-top: 0;
+	padding-top: 1em;
+}
+
+/* Number the lists. Make the lists a bit more spaced. */
+div.brutal-grid div ul li {
+	list-style: decimal;
+	line-height: 1.4em;
+}
+
+/* Links are less vivid and gain some underine when hover'd. */
+div.brutal-grid a:visited,
+div.brutal-grid a:link {
+	color: #00a;
+}
+div.brutal-grid a:focus,
+div.brutal-grid a:hover {
+	color: #00f;
+	text-decoration: underline;
+}
