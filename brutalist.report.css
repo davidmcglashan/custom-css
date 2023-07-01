@@ -6,6 +6,11 @@ div.brutal-grid {
     grid-template-columns: none;
 }
 
+/* Hide Hacker News */
+div.brutal-grid div:first-child {
+	display: none;
+}
+
 /* Bigger site titles. Space them nicely. */
 div.brutal-grid div h3 {
 	margin-bottom: 0.25em;
